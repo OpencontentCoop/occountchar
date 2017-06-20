@@ -9,8 +9,11 @@ FrontendCSSFileList[]=jquery.ezinputcountchar.css
 BackendCSSFileList[]=jquery.ezinputcountchar.css
 
 [JavaScriptSettings]
+JavaScriptList[]=ezjsc::jquery
 JavaScriptList[]=jquery.ezinputcountchar.js
+FrontendJavaScriptList[]=ezjsc::jquery
 FrontendJavaScriptList[]=jquery.ezinputcountchar.js
+BackendJavaScriptList[]=ezjsc::jquery
 BackendJavaScriptList[]=jquery.ezinputcountchar.js
 
 */ ?>
