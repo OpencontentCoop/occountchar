@@ -60,9 +60,10 @@
             }
 
             ed.onKeyUp.add(function (ed, e) {
-                if (checkKeys(e.keyCode) || t.update_on_delete && checkDelOrBksp(e.keyCode)) {
+                /*if (checkKeys(e.keyCode) || t.update_on_delete && checkDelOrBksp(e.keyCode)) {
                     t._count(ed);
-                }
+                }*/
+                t._count(ed);
 
                 last = e.keyCode;
             });
