@@ -70,28 +70,17 @@
 
         _getCount: function (ed) {
             var tc = 0;
-            var tx = ed.getContent({format: 'raw'});
-
-            if (tx) {
-                tx = tx.replace(/\.\.\./g, ' '); // convert ellipses to spaces
-
-                tx = tx.replace(/<.[^<>]*?>/g, ' ').replace(/&nbsp;|&#160;/gi, ' '); // remove html tags and space chars
-
-                // deal with html entities
-                tx = tx.replace(/(\w+)(&.+?;)+(\w+)/, "$1$3").replace(/&.+?;/g, ' ');
-                tx = tx.replace(this.cleanre, ''); // remove punctuation
-
-                var charArray = tx.match(this.countre);
-
-                if (charArray) {
-                    var arrayLength = charArray.length;
-                    for (var i = 0; i < arrayLength; i++) {
-                        tc += charArray[i].length;
-                    }
-                }
-            }
-
+            var tx = ed.getContent({ format: 'raw' });
+            var decoded = this._decodeHtml(tx);
+            var decodedStripped = decoded.replace(/(<([^>]+)>)/ig, '');
+            var tc = decodedStripped.length;
             return tc;
+        },
+
+        _decodeHtml: function(html) {
+            var txt = document.createElement('textarea');
+            txt.innerHTML = html;
+            return txt.value;
         },
 
         _count: function (ed) {
