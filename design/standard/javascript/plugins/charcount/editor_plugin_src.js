@@ -33,7 +33,7 @@
                     row = tinymce.DOM.get(ed.id + '_path_row');
 
                     if (row)
-                        tinymce.DOM.add(row.parentNode, 'div', {'style': 'float: right'}, ed.getLang('charcount.chars', 'Chars: ') + '<span id="' + t.id + '">0</span>');
+                        tinymce.DOM.add(row.parentNode, 'div', {'style': 'float: right'}, ed.getLang('charcount.chars', 'Caratteri: ') + '<span id="' + t.id + '">0</span>');
                 } else {
                     tinymce.DOM.add(id, 'span', {}, '<span id="' + t.id + '">0</span>');
                 }
